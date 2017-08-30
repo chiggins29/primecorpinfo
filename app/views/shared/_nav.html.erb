@@ -1,15 +1,21 @@
-<img class="logo-nav-img" src="https://s3-us-west-2.amazonaws.com/primecorpservices/Logo1.png">
+<a href="/"><img class="logo-nav-img" src="https://s3-us-west-2.amazonaws.com/primecorpservices/Logo1.png"></a>
 <ul class="nav nav-link-styles">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Welcome Video</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Informational Videos</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">FAQ</a>
-  </li>
+  <% if user_signed_in? %>
+    <li class="nav-item">
+      <%= link_to "Welcome Content", welcome_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "Informational Videos", info_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "FAQ", faq_path, class: "nav-link" %>
+    </li>
+    <li>
+      <%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %>
+    </li>
+  <% else %>
+    <li class="nav-item">
+      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+    </li>
+  <% end %>
 </ul>
