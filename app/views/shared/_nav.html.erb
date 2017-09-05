@@ -1,6 +1,6 @@
 <a href="/"><img class="logo-nav-img" src="https://s3-us-west-2.amazonaws.com/primecorpservices/Logo1.png"></a>
 <ul class="nav nav-link-styles">
-  <% if user_signed_in? %>
+  <% if logged_in?(:user, :admin) %>
     <li class="nav-item">
       <%= link_to "Welcome Content", welcome_path, class: "nav-link" %>
     </li>
