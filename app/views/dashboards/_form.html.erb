@@ -1,0 +1,10 @@
+<%= form_for @dashboard do |f| %>
+
+	<%= f.text_field :title%>
+
+	<%= f.text_field :description%>
+
+	<%=f.file_field :video%>
+
+	<%= f.submit "Submit" %>
+<% end %>
