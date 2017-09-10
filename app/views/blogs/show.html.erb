@@ -1,0 +1,7 @@
+	
+	<%= @blog.title %><br>
+	<%= @blog.description %><br>
+	<%= @blog.body %><br>
+
+	<%= link_to "Edit", edit_blog_path(@blog) if logged_in?(:admin) %>
+	<%= link_to "delete", @blog, method: :delete, data: {confirm: "Are you sure you want to delete this video?"} if logged_in?(:admin) %>

@@ -20,7 +20,7 @@ class BlogsController < ApplicationController
 
 		respond_to do |format|
 			if @blog.save
-				format.html { redirect_to blogs_path, notice: "Blog was successfully created!" }
+				format.html { redirect_to @blog, notice: "Blog was successfully created!" }
 			else
 				format.html { redirect_to new_blog_path }
 			end
@@ -32,11 +32,20 @@ class BlogsController < ApplicationController
 	end
 
 	def update
-
+		respond_to do |format|
+			if @blog.update(blog_params)
+				format.html { redirect_to @blog, notice: "Blog was successfully updated!"}
+			else
+				format.html { redirect_to edit_blog_path }
+			end
+		end
 	end
 
 	def destroy
-
+		@blog.destroy
+		respond_to do |format|
+			format.html { redirect_to @blog, notice: "Blog successfully deleted!"}
+		end
 	end
 
 
