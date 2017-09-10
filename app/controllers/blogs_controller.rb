@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
 
-	before_action :set_blog, only: [:show, :edit, :update, :destroy]
+	before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
 	access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, admin: :all
 
 	def index
@@ -48,7 +48,14 @@ class BlogsController < ApplicationController
 		end
 	end
 
-
+	def toggle_status
+		if @blog.draft?
+			@blog.published!
+		else @blog.published?
+			@blog.draft!
+		end
+		redirect_to blogs_url, notice: "Blog status was updated successfully"
+	end
 
 	private
 
