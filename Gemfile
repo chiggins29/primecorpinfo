@@ -58,3 +58,4 @@ gem 'bootstrap', '~> 4.0.0.beta'
 gem "gritter", "1.2.0"
 gem 'petergate'
 gem 'carrierwave'
+gem 'friendly_id', '~> 5.1'

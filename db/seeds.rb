@@ -7,8 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create!(email: 'test@test.com', password: 'asdfasdf', roles: 'user')
+User.create!(email: 'test@test.com', password: 'asdfasdf')
 
 puts "1 User Created"
 
 User.create!(email: 'admin@test.com', password: 'asdfasdf', roles: 'admin')
+
+puts "1 Admin User Created"
