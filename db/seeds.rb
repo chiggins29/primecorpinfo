@@ -7,10 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create!(email: 'test@test.com', password: 'asdfasdf')
+User.create!(email: 'user@cody.com', password: 'asdfasdf')
 
 puts "1 User Created"
 
-User.create!(email: 'admin@test.com', password: 'asdfasdf', roles: 'admin')
+User.create!(email: 'cody@cody.com', password: 'asdfasdf', roles: 'admin')
 
 puts "1 Admin User Created"
+
+10.times do |blog|
+Blog.create!(title:"My Blog Post #{blog}", description:"This is the description for #{blog}", body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")	
+end
+
+puts "10 Blogs created!"

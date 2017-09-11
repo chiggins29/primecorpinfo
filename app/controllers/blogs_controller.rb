@@ -4,11 +4,19 @@ class BlogsController < ApplicationController
 	access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, admin: :all
 
 	def index
-		@blogs = Blog.all
+		if logged_in?(:admin)
+			@blogs = Blog.all
+		else
+			@blogs = Blog.published.all
+		end	
 	end
 
 	def show
-		@blog = Blog.friendly.find(params[:id])
+		if logged_in?(:admin) || @blog.published?
+			@blog = Blog.friendly.find(params[:id])
+		else
+			redirect_to blogs_path, notice: "You are not authorized to view this page."
+		end
 	end
 
 	def new

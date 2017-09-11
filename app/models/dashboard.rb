@@ -4,4 +4,5 @@ class Dashboard < ApplicationRecord
   
 	mount_uploader :video, VideoUploader  
 
+	validates_presence_of :title, :description, :video
 end
