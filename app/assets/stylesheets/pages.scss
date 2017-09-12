@@ -1,3 +1,27 @@
+/*These styles are for both new blog and new video upload.*/
+
+.blog-background-color {
+	background-color: #f6f6f6;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	border-radius: 25px;
+}
+
 .blog-form-container {
 	padding: 50px 0 50px 0;
+
+}
+
+.blog-form-padding {
+	padding: 20px;
+}
+
+
+
+.blog-btn {
+	width: 75%;
+}
+
+.blog-form-padding-btn {
+	text-align: center;
 }

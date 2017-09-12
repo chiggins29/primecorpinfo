@@ -5,3 +5,4 @@
 
 <%= link_to "Edit", edit_dashboard_path(@dashboard) if logged_in?(:admin) %>
 <%= link_to "delete", @dashboard, method: :delete, data: {confirm: "Are you sure you want to delete this video?"} if logged_in?(:admin) %>
+

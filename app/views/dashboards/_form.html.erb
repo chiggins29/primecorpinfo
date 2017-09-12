@@ -1,10 +1,20 @@
-<%= form_for @dashboard do |f| %>
-
-	<%= f.text_field :title%>
-
-	<%= f.text_field :description%>
-
-	<%=f.file_field :video%>
-
-	<%= f.submit "Submit" %>
-<% end %>
+<div class="container blog-background-color">
+	<div class="row blog-form-container">
+		<div class="container">
+			<%= form_for @dashboard do |f| %>
+			<div class="blog-form-padding">
+				<%= f.text_field :title, placeholder: "Video Title", class: "form-control blog-field-styes" %>
+			</div>
+			<div class="blog-form-padding">
+				<%= f.text_field :description, placeholder: "Video Description", class: "form-control blog-field-styes" %>
+			</div>
+			<div class="blog-form-padding">	
+				<%= f.file_field :video, class: "form-control blog-field-styes" %>
+			</div>
+			<div class="blog-form-padding-btn">	
+				<%= f.submit "Submit", class: "btn btn-primary form-control blog-btn" %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>

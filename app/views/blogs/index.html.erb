@@ -1,6 +1,7 @@
 <% @blogs.each do |blog| %>
-	<%= link_to blog.status, toggle_status_blog_path(blog) if logged_in?(:admin) %><br>
+	<%= blog.catagory %><br>
 	<%= link_to blog.title, blog_path(blog) %><br>
 	<%= blog.description %><br>
-	<%= blog.body %><br><hr>
+	<%= blog.body %><br>
+	<%= link_to blog.status, toggle_status_blog_path(blog) if logged_in?(:admin) %><br><hr>
 <% end %>

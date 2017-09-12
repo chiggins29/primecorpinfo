@@ -1,5 +1,5 @@
-<% @dashboards.each do |e| %><br>
-	<%= link_to e.title, dashboard_path(e.id) %><br>
-	<%= e.description %><br>
-	<%= video_tag e.video_url.to_s, :controls => true, size: "600x400" %>
+<% @dashboards.each do |video| %><br>
+	<%= link_to video.title, dashboard_path(video) %><br>
+	<%= video.description %><br>
+	<%= video_tag video.video_url.to_s, :controls => false, size: "300x200" %>
 <% end %>
