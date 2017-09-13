@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
 
 		respond_to do |format|
 			if @review.save
-				format.html { redirect_to @reviews, notice: "Your review has been submitted and will post to the main page within 48 hours!"}
+				format.html { redirect_to reviews_path, notice: "Your review has been submitted and will post to the main page within 48 hours!"}
 			else
 				format.html { redirect_to new_review_path, notice: "Your review failed to submit, please try again!"}
 			end
