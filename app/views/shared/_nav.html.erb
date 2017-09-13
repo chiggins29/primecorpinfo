@@ -11,6 +11,9 @@
       <%= link_to "FAQ", faq_path, class: "nav-link" %>
     </li>
     <li class="nav-item">
+      <%= link_to "Reviews", reviews_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item">
       <%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %>
     </li>
   <% else %>

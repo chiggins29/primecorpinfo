@@ -1,0 +1,20 @@
+<div class="container blog-background-color">
+	<div class="row blog-form-container">
+		<div class="container">
+			<%= form_for @review do |f| %>
+			<div class="blog-form-padding">
+				<%= f.text_field :full_name, placeholder: "First & Last Name", class: "form-control blog-field-styes" %>
+			</div>
+			<div class="blog-form-padding">
+				<%= f.text_field :service_purchased, placeholder: "What service are we helping you with?", class: "form-control blog-field-styes" %>
+			</div>
+			<div class="blog-form-padding">
+				<%= f.text_field :body, placeholder: "Tell us about your experience!", class: "form-control blog-field-styes" %>
+			</div>
+			<div class="blog-form-padding-btn">	
+				<%= f.submit "Submit", class: "btn btn-primary form-control blog-btn" %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
