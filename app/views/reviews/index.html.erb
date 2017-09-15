@@ -1,8 +1,14 @@
-<% @reviews.each do |review| %>
-	<%= link_to review.full_name, review_path(review.id) %><br>
-	<%= review.service_purchased %><br>
-	<%= review.body %><br>
-	<%= link_to review.status, toggle_status_review_path(review) if logged_in?(:admin) %><br><hr>
-<% end %>
 
-<%= link_to "Leave A Review Now", new_review_path, class: "btn btn-primary" %>
+<div class="container">
+	<% @reviews.each do |review| %>
+		<h4>Student Name: <%= link_to review.full_name, review_path(review.id) %></h4>
+		<h5>Service Purchased: <%= review.service_purchased %></h5>
+		<p><%= review.body %></p>
+		<h5>Rating: <%= review.rating %></h5>
+		<%= link_to review.status, toggle_status_review_path(review) if logged_in?(:admin) %><br><hr>
+	<% end %>
+</div>
+<div class="container">
+	<h5>Average Rating: <%= average_rating %></h5>
+	<%= link_to "Leave A Review Now", new_review_path, class: "btn btn-primary" %>
+</div>

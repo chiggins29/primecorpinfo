@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   	end
   end
 	
+  resources :ratings
+
 	resources :dashboards
 
   root to: 'pages#home'
