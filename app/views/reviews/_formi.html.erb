@@ -19,6 +19,13 @@
 				  <%= f.radio_button(:rating, 4) %> <%= f.label(:rating.to_s + "_4", "Exceeded Expectation", class: "radio-btn") %> 
 				  <%= f.radio_button(:rating, 5) %> <%= f.label(:rating.to_s + "_5", "Best Company Ever", class: "radio-btn") %>
 			</div>
+			<div id="star-rating">
+			  <% if @review.no_of_stars.blank? %>
+			  	<%= render "new" %>  
+			  <% else %>
+			    Star rating: <%= render_stars(@review.no_of_stars) %>
+			  <% end %>
+			</div> 
 			<div class="blog-form-padding-btn">	
 				<%= f.submit "Submit", class: "btn btn-primary form-control blog-btn" %>
 			</div>
