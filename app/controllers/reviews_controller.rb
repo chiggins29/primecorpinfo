@@ -5,9 +5,9 @@ class ReviewsController < ApplicationController
 
 	def index
 		if logged_in?(:admin)
-			@reviews = Review.all
+			@reviews = Review.all.page(params[:page]).per(10)
 		else
-			@reviews = Review.published.all
+			@reviews = Review.published.all.page(params[:page]).per(5)
 		end
 	end
 
@@ -50,6 +50,10 @@ class ReviewsController < ApplicationController
 		end
 		redirect_to reviews_url, notice: "Review status was updated successfully"
 	end
+
+	# def no_of_stars
+ #    Review.all.pluck(:rating).sum / Review.all.pluck(:rating).count.to_f
+	# end
 
 	private
 

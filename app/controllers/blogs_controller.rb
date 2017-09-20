@@ -5,9 +5,9 @@ class BlogsController < ApplicationController
 
 	def index
 		if logged_in?(:admin)
-			@blogs = Blog.all
+			@blogs = Blog.all.page(params[:page]).per(5)
 		else
-			@blogs = Blog.published.all
+			@blogs = Blog.published.all.page(params[:page]).per(5)
 		end	
 	end
 
@@ -68,7 +68,7 @@ class BlogsController < ApplicationController
 	private
 
 	def blog_params
-		params.require(:blog).permit(:catagory, :title, :description, :body)
+		params.require(:blog).permit(:catagory, :title, :description, :body, :status)
 	end
 
 	def set_blog

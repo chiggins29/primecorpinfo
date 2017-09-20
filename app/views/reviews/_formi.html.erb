@@ -13,19 +13,13 @@
 			</div>
 			<div class="rating">
 				<h2>Please Rate Our Service:</h2>
-				  <%= f.radio_button(:rating, 1) %> <%= f.label(:rating.to_s + "_1", "Missed Expectation", class: "radio-btn") %> 
-				  <%= f.radio_button(:rating, 2) %> <%= f.label(:rating.to_s + "_2", "Almost Hit Expectation", class: "radio-btn") %> 
-				  <%= f.radio_button(:rating, 3) %> <%= f.label(:rating.to_s + "_3", "Met Expectation", class: "radio-btn") %> 
-				  <%= f.radio_button(:rating, 4) %> <%= f.label(:rating.to_s + "_4", "Exceeded Expectation", class: "radio-btn") %> 
-				  <%= f.radio_button(:rating, 5) %> <%= f.label(:rating.to_s + "_5", "Best Company Ever", class: "radio-btn") %>
+				  <%= f.radio_button(:rating, 1) %> <%= f.label(:rating.to_s + "_1", "1 Star", class: "radio-btn") %> 
+				  <%= f.radio_button(:rating, 2) %> <%= f.label(:rating.to_s + "_2", "2 Stars", class: "radio-btn") %> 
+				  <%= f.radio_button(:rating, 3) %> <%= f.label(:rating.to_s + "_3", "3 Stars", class: "radio-btn") %> 
+				  <%= f.radio_button(:rating, 4) %> <%= f.label(:rating.to_s + "_4", "4 Stars", class: "radio-btn") %> 
+				  <%= f.radio_button(:rating, 5) %> <%= f.label(:rating.to_s + "_5", "5 Stars", class: "radio-btn") %>
 			</div>
-			<div id="star-rating">
-			  <% if @review.no_of_stars.blank? %>
-			  	<%= render "new" %>  
-			  <% else %>
-			    Star rating: <%= render_stars(@review.no_of_stars) %>
-			  <% end %>
-			</div> 
+			<%= render "average" %>
 			<div class="blog-form-padding-btn">	
 				<%= f.submit "Submit", class: "btn btn-primary form-control blog-btn" %>
 			</div>

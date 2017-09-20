@@ -59,3 +59,4 @@ gem "gritter", "1.2.0"
 gem 'petergate'
 gem 'carrierwave'
 gem 'friendly_id', '~> 5.1'
+gem 'kaminari'

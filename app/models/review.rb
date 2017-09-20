@@ -9,4 +9,6 @@ class Review < ApplicationRecord
 	def no_of_stars
     Review.all.pluck(:rating).sum / Review.all.pluck(:rating).count.to_f
 	end
+
+	
 end
