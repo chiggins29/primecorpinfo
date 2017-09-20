@@ -1,7 +1,10 @@
-<div class="container blog-background-color">
+-<div class="container blog-background-color">
 	<div class="row blog-form-container">
 		<div class="container">
 			<%= form_for @dashboard do |f| %>
+			<div class="blog-form-padding">
+				<%= f.select :category, ["Welcome Videos", "Info", "Tax Help", "Estate Planning Help", "Corporate Credit Help"], placeholder: "Video Catagory", class: "form-control blog-field-styes" %>
+			</div>
 			<div class="blog-form-padding">
 				<%= f.text_field :title, placeholder: "Video Title", class: "form-control blog-field-styes" %>
 			</div>

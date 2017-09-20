@@ -1,11 +1,88 @@
 <div class="container">
-<%= paginate @blogs, window: 2 %>
-	<% @blogs.each do |blog| %>
-		<h3><%= link_to blog.title, blog_path(blog) %></h3>
-		<h4><%= blog.catagory %></h4>
-		<h5><%= blog.description %></h5>
-		<p><%= blog.body %></p>
-		<%= link_to blog.status, toggle_status_blog_path(blog) if logged_in?(:admin) %><br><hr>
+	<%= link_to "General Blogs", "#blog-general-anchor" %>- 
+	<%= link_to "Tax Blogs", "#blog-tax-anchor" %>- 
+	<%= link_to "Entity Blogs", "#blog-entities-anchor" %>- 
+	<%= link_to "Estate Blogs", "#blog-estate-anchor" %>- 
+	<%= link_to "Corporate Credit Blogs", "#blog-credit-anchor" %> 
+</div>
+
+
+<div id="blog-general-anchor"></div>
+<div class="container">
+<h1>General Blogs:</h1>
+	<% @blogs.where(catagory: "General").each do |a| %>
+		<div class="card">
+		  <div class="card-block">
+		    	<h4 class="card-title"><%= link_to a.title, blog_path(a) %></h4>
+		    	<h6 class="card-subtitle"><%= a.catagory %></h6>
+		    	<p class="card-text"><%= a.description %></p>
+		    	<p class="card-text"><%= a.body %></p>
+		    	<p class="card-text"><%= link_to a.status, toggle_status_blog_path(a) if logged_in?(:admin) %>
+		  </div>
+		</div>
 	<% end %>
-	<%= paginate @blogs, window: 2 %>
+</div>
+
+<div id="blog-tax-anchor"></div>
+<div class="container">
+<h1>Tax Blogs:</h1>
+	<% @blogs.where(catagory: "Tax").each do |b| %>
+		<div class="card">
+		  <div class="card-block">
+		    	<h4 class="card-title"><%= link_to b.title, blog_path(b) %></h4>
+		    	<h6 class="card-subtitle"><%= b.catagory %></h6>
+		    	<p class="card-text"><%= b.description %></p>
+		    	<p class="card-text"><%= b.body %></p>
+		    	<p class="card-text"><%= link_to b.status, toggle_status_blog_path(b) if logged_in?(:admin) %>
+		  </div>
+		</div>
+	<% end %>
+</div>
+
+<div id="blog-entities-anchor"></div>
+<div class="container">
+<h1>Entity Blogs:</h1>
+	<% @blogs.where(catagory: "Entities").each do |c| %>
+		<div class="card">
+		  <div class="card-block">
+		    	<h4 class="card-title"><%= link_to c.title, blog_path(c) %></h4>
+		    	<h6 class="card-subtitle"><%= c.catagory %></h6>
+		    	<p class="card-text"><%= c.description %></p>
+		    	<p class="card-text"><%= c.body %></p>
+		    	<p class="card-text"><%= link_to c.status, toggle_status_blog_path(c) if logged_in?(:admin) %>
+		  </div>
+		</div>
+	<% end %>
+</div>
+
+<div id="blog-estate-anchor"></div>
+<div class="container">
+<h1>Estate Blogs:</h1>
+	<% @blogs.where(catagory: "Estate Planning").each do |d| %>
+		<div class="card">
+		  <div class="card-block">
+		    	<h4 class="card-title"><%= link_to d.title, blog_path(d) %></h4>
+		    	<h6 class="card-subtitle"><%= d.catagory %></h6>
+		    	<p class="card-text"><%= d.description %></p>
+		    	<p class="card-text"><%= d.body %></p>
+		    	<p class="card-text"><%= link_to d.status, toggle_status_blog_path(d) if logged_in?(:admin) %>
+		  </div>
+		</div>
+	<% end %>
+</div>
+
+<div id="blog-credit-anchor"></div>
+<div class="container">
+<h1>Corporate Credit Blogs:</h1>
+	<% @blogs.where(catagory: "Corporate Credit").each do |e| %>
+		<div class="card">
+		  <div class="card-block">
+		    	<h4 class="card-title"><%= link_to e.title, blog_path(e) %></h4>
+		    	<h6 class="card-subtitle"><%= e.catagory %></h6>
+		    	<p class="card-text"><%= e.description %></p>
+		    	<p class="card-text"><%= e.body %></p>
+		    	<p class="card-text"><%= link_to e.status, toggle_status_blog_path(e) if logged_in?(:admin) %>
+		  </div>
+		</div>
+	<% end %>
 </div>

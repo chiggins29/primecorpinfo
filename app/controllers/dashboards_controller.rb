@@ -50,7 +50,7 @@ class DashboardsController < ApplicationController
   end
 
 	def dashboard_params
-  	params.require(:dashboard).permit(:title,:description,:video)
+  	params.require(:dashboard).permit(:title, :description, :video, :category)
   end
 
 

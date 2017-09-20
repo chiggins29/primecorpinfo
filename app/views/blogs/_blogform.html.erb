@@ -3,7 +3,7 @@
 		<div class="container">
 			<%= form_for @blog do |f| %>
 			<div class="blog-form-padding">
-				<%= f.text_field :catagory, placeholder: "Blog Catagory", class: "form-control blog-field-styes" %>
+				<%= f.select :catagory, ["General", "Tax", "Entities", "Estate Planning", "Corporate Credit"], placeholder: "Blog Catagory", class: "form-control blog-field-styes" %>
 			</div>
 			<div class="blog-form-padding">
 				<%= f.text_field :title, placeholder: "Blog Title", class: "form-control blog-field-styes" %>

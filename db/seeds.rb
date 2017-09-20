@@ -15,17 +15,35 @@ User.create!(email: 'cody@cody.com', password: 'asdfasdf', roles: 'admin')
 
 puts "1 Admin User Created"
 
-20.times do |blog|
+5.times do |blog|
 	Blog.create!(catagory: "Tax", title:"My Blog Post #{blog}", description:"This is the description for #{blog}", body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")	
 end
 
 puts "5 Tax Blogs created!"
 
-20.times do |blog|
-	Blog.create!(catagory: "Estate", title:"My Blog Post #{blog}", description:"This is the description for #{blog}", body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")	
+5.times do |blog|
+	Blog.create!(catagory: "General", title:"My Blog Post #{blog}", description:"This is the description for #{blog}", body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")	
+end
+
+puts "5 General Blogs created!"
+
+5.times do |blog|
+	Blog.create!(catagory: "Entities", title:"My Blog Post #{blog}", description:"This is the description for #{blog}", body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")	
+end
+
+puts "5 Entity Blogs created!"
+
+5.times do |blog|
+	Blog.create!(catagory: "Estate Planning", title:"My Blog Post #{blog}", description:"This is the description for #{blog}", body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")	
 end
 
 puts "5 Estate Blogs created!"
+
+5.times do |blog|
+	Blog.create!(catagory: "Corporate Credit", title:"My Blog Post #{blog}", description:"This is the description for #{blog}", body:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.")	
+end
+
+puts "5 CC Blogs created!"
 
 15.times do |review|
 	Review.create!(full_name: "Cody H", service_purchased: "Tax", body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.", rating: 4)
