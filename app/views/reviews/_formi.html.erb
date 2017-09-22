@@ -1,4 +1,5 @@
 <div class="container blog-background-color">
+<%= render "average" %>
 	<div class="row blog-form-container">
 		<div class="container">
 			<%= form_for @review do |f| %>
@@ -19,7 +20,6 @@
 				  <%= f.radio_button(:rating, 4) %> <%= f.label(:rating.to_s + "_4", "4 Stars", class: "radio-btn") %> 
 				  <%= f.radio_button(:rating, 5) %> <%= f.label(:rating.to_s + "_5", "5 Stars", class: "radio-btn") %>
 			</div>
-			<%= render "average" %>
 			<div class="blog-form-padding-btn">	
 				<%= f.submit "Submit", class: "btn btn-primary form-control blog-btn" %>
 			</div>

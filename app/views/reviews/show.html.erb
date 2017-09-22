@@ -1,8 +1,10 @@
-
+<div class="container page-container">
 	<%= @review.full_name %><br>
 	<%= @review.service_purchased %><br>
 	<%= @review.body %><br>
 	<%= customer_star_rating(@review.rating) %><br>
+	
 
 	<%= link_to "Back", reviews_path %>
 	<%= link_to "Delete", @review, method: :delete, data: {confirm: "Are you sure you want to delete this review?"} if logged_in?(:admin) %><br><hr>
+</div>

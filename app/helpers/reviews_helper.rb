@@ -22,4 +22,6 @@ module ReviewsHelper
     end
     outputs.html_safe
   end
+
+
 end

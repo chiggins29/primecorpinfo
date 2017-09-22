@@ -1,17 +1,23 @@
-<div class="container">
-	<%= paginate @reviews, window: 2 %>
-	<%= link_to "Leave A Review Now", new_review_path, class: "btn btn-primary new-review-btn" %>
-</div>
-<div class="container">
+<div class="container page-container">
+	<div class="container">
+		<%= paginate @reviews, window: 2 %>
+		<%= link_to "Leave A Review Now", new_review_path, class: "btn btn-primary new-review-btn" %>
+	</div>
+	<div class="container">
 	<% @reviews.each do |review| %>
-		<h4>Student Name: <%= link_to review.full_name, review_path(review.id) %></h4>
-		<h5>Service Purchased: <%= review.service_purchased %></h5>
-		<p><%= review.body %></p>
-		<h5 class="rating-field">Rating: <%= customer_star_rating(review.rating) %></h5>
-		<%= link_to review.status, toggle_status_review_path(review) if logged_in?(:admin) %><br><hr>
+		<div class="card">
+			<div class="card-block">
+					<h4>Student Name: <%= link_to review.full_name, review_path(review.id) %></h4>
+					<h5>Service Purchased: <%= review.service_purchased %></h5>
+					<p><%= review.body %></p>
+					<h5 class="rating-field">Rating: <%= customer_star_rating(review.rating) %></h5>
+					<%= link_to review.status, toggle_status_review_path(review) if logged_in?(:admin) %><br>
+			</div>
+		</div>	
 	<% end %>
-</div>
-<div class="container">
-	<%= link_to "Leave A Review Now", new_review_path, class: "btn btn-primary new-review-btn" %>
-	<%= paginate @reviews, window: 2 %>
+	</div>
+	<div class="container">
+		<%= link_to "Leave A Review Now", new_review_path, class: "btn btn-primary new-review-btn" %>
+		<%= paginate @reviews, window: 2 %>
+	</div>
 </div>

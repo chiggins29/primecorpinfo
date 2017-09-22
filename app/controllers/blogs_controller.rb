@@ -3,6 +3,8 @@ class BlogsController < ApplicationController
 	before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
 	access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, admin: :all
 
+	
+
 	def index
 		if logged_in?(:admin)
 			@blogs = Blog.all
